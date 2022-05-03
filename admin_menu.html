@@ -1,0 +1,273 @@
+<html>
+
+<head>
+    <title>Admin Settings | Blood Bank</title>
+    <link rel="icon" href="https://res.cloudinary.com/dm4exe2e8/image/upload/v1651155188/icon_dhpwbe.png"
+        type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital@1&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Playfair+Display:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Ephesis&family=Libre+Baskerville:wght@700&family=Merriweather:wght@900&family=Oswald:wght@600&family=Yanone+Kaffeesatz:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@500&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        #Head2 {
+            animation: fadeIn 5s;
+            -webkit-animation: fadeIn 5s;
+            -moz-animation: fadeIn 5s;
+            -o-animation: fadeIn 5s;
+            -ms-animation: fadeIn 5s;
+        }
+
+        #head-cont{
+		height: 80px;
+		background: #dcddd1;
+		background: radial-gradient(circle, #dcddd1 0%, #898a83 100%);
+		margin-top: 0px;
+		}
+
+        #bl:hover {
+        color: #3c005a;
+        transition: 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-o-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-ms-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .styled-table {
+            font-family: "Playfair Display";
+            font-weight: bold;
+            border-collapse: collapse;
+            color: #3c005a;
+            margin: 25px 0;
+            font-size: 0.9em;
+            min-width: 700px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .styled-table thead tr {
+            background-color: #3c005a;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+
+        .styled-table tbody tr {
+            border-bottom: thin solid #3c005a;
+        }
+
+        tr:nth-child(even) {
+        background-color: rgba(255,255,255, 0.5);
+            color:#2E0854;
+        }
+
+        tr:nth-child(odd) {
+            color:#2E0854;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: thin solid #3c005a;
+        }
+
+        .styled-table tbody tr.active-row {
+            font-weight: bold;
+        }
+
+        tr:hover{
+            background-color: 	#E6E6FA;
+        }
+
+        #button1{
+            font-family: 'Yanone Kaffeesatz';
+            font-size: 18px;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            border: solid black;
+            border-radius: 10px;
+            color: #3c005a;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        #button1:hover{
+            color: white;
+            background-color: #2E0854;
+            border: solid black;
+            transform: translateY(-7px);
+            transition: 1s ease-in-out;
+            box-shadow: 5px 5px #880808;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <nav>
+            <div class="nav-wrapper" id="head-cont">
+                <a href="{{url_for('home')}}" class="brand-logo" style="margin-top: -25px; margin-left: 490px;"><span id="head"
+                        style="color: #880808;">
+                        <h2 id="bl">Blood <span id="ba" style="color: #3c005a;">Bank</span></h2>
+                    </span></a>
+                <!-- <ul id="nav-mobile" class="right hide-on-med-and-down" style="padding-left: 5px;">
+                    <li><a href="add_admin.html"
+                            style="text-decoration: none; margin-top: 10px; width: 140px; text-align: center;" id="hov">Add
+                            Admin</a>
+                    <li><a href="add_bb.html"
+                            style="text-decoration: none; margin-top: 10px; width: 140px; text-align: center;" id="hov">Add
+                            BB/BD</a>
+                    <li><a href="edit_bb.html"
+                            style="text-decoration: none; margin-top: 10px; width: 140px; text-align: center;" id="hov">Edit
+                            BB/BD</a>
+                    <li><a href="#" style="text-decoration: none; margin-top: 10px; width: 140px; text-align: center;"
+                            id="hov">Delete BB/BD</a>
+                </ul> -->
+            </div>
+        </nav>
+    </div>
+
+    <div style="border: 0; padding: 0; margin: 0;">
+        <img src="https://res.cloudinary.com/dm4exe2e8/image/upload/v1651178026/A4_py8d7v.png" />
+        <h1 id="Head2" style="margin-top: -290px; text-align: center; font-family: Lobster; font-size: 15vh;">
+        Admin settings</h1>
+    </div>
+    
+    <div id="table1" style="margin-top: 250px; width: 70%; margin-left: 180px; text-align: center !important; font-size: 1.5vw; ">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th scope="col"> Contents </th>
+                    <th scope="col"> Action </th>
+                </tr>
+            </thead>
+
+            <tr>
+                <td>Add New Admin</td>
+                <td>
+                    <form method="POST" action="/ad_admin">
+                    <input id="button1" type="submit" value="Add" style="cursor:pointer;"></a>
+                    </form>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Add Blood Bank/Donor</td>
+                <td>
+                    <form method="POST" action="/ad_bb">
+                        <input id="button1" type="submit" value="Add" style="cursor:pointer" ;>
+                    </form>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Edit Blood Bank/Donor</td>
+                <td>
+                    <form method="POST" action="/edi_bb">
+                        <input id="button1" type="submit" value="Edit" style="cursor:pointer" ;>
+                    </form>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Delete admin</td>
+                <td>
+                    <form method="POST" action="/de_admin">
+                        <input id="button1" type="submit" value="Delete" style="cursor:pointer" ;>
+                    </form>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Delete Blood Bank/Donor</td>
+                <td>
+                    <form method="POST" action="/de_bb">
+                        <input id="button1" type="submit" value="Delete" style="cursor:pointer" ;>
+                    </form>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Show Requested Blood Bank/Donor</td>
+                <td>
+                    <form method="POST" action="/re_bb">
+                        <input id="button1" type="submit" value="Show" style="cursor:pointer" ;>
+                    </form>
+                </td>
+            </tr>
+
+        </table>
+    </div><br>
+    <!-- <div><a href="{{url_for('home')}}">Home page</a></div> -->
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

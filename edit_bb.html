@@ -1,0 +1,246 @@
+<html>
+
+<head>
+    <title>Admin Settings | Blood Bank</title>
+    <link rel="icon" href="https://res.cloudinary.com/dm4exe2e8/image/upload/v1651155188/icon_dhpwbe.png"
+        type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital@1&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Playfair+Display:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Ephesis&family=Libre+Baskerville:wght@700&family=Merriweather:wght@900&family=Oswald:wght@600&family=Yanone+Kaffeesatz:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@500&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        #Head2 {
+            animation: fadeIn 5s;
+            -webkit-animation: fadeIn 5s;
+            -moz-animation: fadeIn 5s;
+            -o-animation: fadeIn 5s;
+            -ms-animation: fadeIn 5s;
+        }
+
+        #head-cont{
+        height: 80px;
+        background: #dcddd1;
+        background: radial-gradient(circle, #dcddd1 0%, #898a83 100%);
+        margin-top: 0px;
+        }
+
+        #head{
+        font-family: 'Abril Fatface';
+        }
+
+        #bl:hover {
+        color: #3c005a;
+        transition: 0.5s ease-in-out;
+        }
+
+        #ba:hover {
+        color: #880808 !important;
+        transition: 0.5s ease-in-out;
+        }
+
+        #hov{
+            font-family: 'Bitter';
+            color: #3c005a;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+        }
+
+        #hov:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: #880808;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        #hov:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-o-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-ms-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #button1{
+            font-family: 'Yanone Kaffeesatz';
+            font-size: 18px;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            border: solid black;
+            border-radius: 10px;
+            color: #3c005a;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        #button1:hover{
+            background-color: rgba(255, 184, 28);
+            color: #3c005a;
+            background-color: #FFB81C;
+            border: solid black;
+            transform: translateY(-7px);
+            transition: 1s ease-in-out;
+            box-shadow: 5px 5px #880808;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <nav>
+            <div class="nav-wrapper" id="head-cont">
+                <a href="{{url_for('home')}}" class="brand-logo" style="margin-top: -25px; padding-left: 40px;"><span id="head"
+                        style="color: #880808;">
+                        <h2 id="bl">Blood <span id="ba" style="color: #3c005a;">Bank</span></h2>
+                    </span></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down" style="padding-left: 5px;">
+                    <li><a href="{{url_for('add_admin')}}"
+                            style="text-decoration: none; margin-top: 10px; width: 140px; text-align: center;" id="hov">Add
+                            Admin</a>
+                    <li><a href="{{url_for('add_bb')}}"
+                            style="text-decoration: none; margin-top: 10px; width: 140px; text-align: center;" id="hov">Add
+                            BB/BD</a>
+                    <li><a href="{{url_for('edit_bb')}}"
+                            style="text-decoration: none; margin-top: 10px; width: 140px; text-align: center;" id="hov">Edit
+                            BB/BD</a>
+                    <li><a href="{{url_for('del_bb')}}"" style=" text-decoration: none; margin-top: 10px; width: 140px; text-align:
+                            center;" id="hov">Delete BB/BD</a>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <div style="border: 0; padding: 0; margin: 0;">
+        <img src="https://res.cloudinary.com/dm4exe2e8/image/upload/v1651186493/A5_svb7sv.png" />
+        <h1 id="Head2" style="margin-top: -290px; text-align: center; font-family: Lobster; font-size: 15vh;">
+            Edit Blood bank / donor</h1>
+    </div>
+ 
+    <div style="margin-top: 160px;">
+        <img src="https://res.cloudinary.com/dm4exe2e8/image/upload/v1651186551/C10_szpt4g.png" style="float: left; width: auto; height: 400px; margin-top: 90px;" />
+
+        <div
+            style="background-color: #ffc6b5; padding-top: 50px; padding-left: 600px;  padding-bottom: 30px; color: #3c005a; font-size: 1.5vw;">
+            <form action="/edit_bb" method="POST">
+                <span style="font-family:Playfair Display; color: #3c005a; font-size: 1.5vw;">Select your choice: </span>
+                <select class="browser-default" name="choice1"
+                    style="width: 150px; font-family: 'Yanone Kaffeesatz'; height: 30px; float: right; margin-right: 340px;">
+                    <option value=" "> </option>
+                    <option value="bb">Blood Bank</option>
+                    <option value="bd">Blood Donor</option>
+                </select>
+                <br><br>
+                <label for="id" style="font-family:Playfair Display; color: #3c005a; font-size: 1.5vw;">Enter ID : &nbsp;
+                </label>
+                <input class="browser-default" style="height: 30px; margin-left: 75px; width: 150px;" type="number" name="id"
+                    required></input>
+                <br><br>
+                <label for="blood_type" style="font-family:Playfair Display; color: #3c005a; font-size: 1.5vw;">Enter Blood type
+                    : &nbsp;</label>
+                <input class="browser-default" style="height: 30px; width: 150px; margin-left: 5px;" type="text"
+                    name="blood_type" required></input>
+                <br><br>
+                <label for="loc" style="font-family:Playfair Display; color: #3c005a; font-size: 1.5vw;">Enter location : &nbsp;
+                </label>
+                <input class="browser-default" style="height: 30px; width: 150px; margin-left: 30px;" type="text" name="loc"
+                    required></input>
+                <br><br>
+                <label for="bb_name" style="font-family:Playfair Display; color: #3c005a; font-size: 1.5vw;">Enter bd/bb name :
+                    &nbsp; </label>
+                <input class="browser-default" style="height: 30px; width: 150px; margin-left: -5px;" type="text" name="bb_name"
+                    required></input>
+                <br><br>
+                <label for="cont" style="font-family:Playfair Display; color: #3c005a; font-size: 1.5vw;">Enter number : &nbsp;
+                </label>
+                <input class="browser-default" style="height: 30px; margin-left: 30px; width: 150px;" type="number" name="cont"
+                    required></input>
+                <br><br>
+                <input id="button1" type="submit" value="Edit" style="cursor:pointer" ;></input>
+                <a href="{{url_for('home')}}">
+                    <input id="button1" value="Home" style="cursor:pointer; margin-left: 100px;"></input>
+                </a>
+            </form>
+             <br>
+            {{ msg }}
+            <br>
+        </div>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>

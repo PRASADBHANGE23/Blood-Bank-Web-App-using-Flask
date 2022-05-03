@@ -1,0 +1,279 @@
+<html>
+<head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Ephesis&family=Libre+Baskerville:wght@700&family=Merriweather:wght@900&family=Oswald:wght@600&family=Yanone+Kaffeesatz:wght@500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@500&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  #img{
+    width: 100%;
+  }
+
+  #head-cont{
+    height: 80px;
+    background: #dcddd1;
+    background: radial-gradient(circle, #dcddd1 0%, #898a83 100%);
+    margin-top: 0px;
+  }
+
+  #head{
+    font-family: 'Abril Fatface';
+    
+  }
+
+  #strip{
+    height:40px;
+    background: rgb(219,60,52);
+    background: radial-gradient(circle, rgba(219,60,52,1) 0%, rgba(217,191,64,1) 100%);
+  }
+
+
+  #vid{
+    width: 100%;
+    margin-top: 0px;
+  }
+
+  #head1{
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 400px;
+  }
+
+  #content1{
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 2vw;
+    font-weight: bold;
+    color: #3c005a;
+    float: right;
+    margin-left: 400px;
+    margin-top: -280px;
+    padding-right: 30px;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  #hov{
+    font-family: 'Bitter';
+    color: #3c005a;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+  }
+
+  #hov:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #880808;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  #hov:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  #button1{
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 18px;
+    width: 120px;
+    height: 50px;
+    text-align: center;
+    border: solid black;
+    border-radius: 10px;
+    color: #3c005a;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  #button1:hover{
+    background-color: rgba(255, 184, 28);
+    color: #3c005a;
+    background-color: #FFB81C;
+    border: solid black;
+    transform: translateY(-7px);
+    transition: 1s ease-in-out;
+    box-shadow: 5px 5px #880808;
+  }
+
+  #bl:hover {
+    color: #3c005a;
+    transition: 0.5s ease-in-out;
+  }
+
+  #ba:hover {
+    color: #880808 !important;
+    transition: 0.5s ease-in-out;
+  }
+  #button1 {
+      font-family: 'Yanone Kaffeesatz';
+      font-size: 18px;
+      width: 120px;
+      height: 40px;
+      text-align: center;
+      border: solid black;
+      border-radius: 10px;
+      color: #3c005a;
+      background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  #button1:hover {
+      color: white;
+      background-color: #2E0854;
+      border: solid black;
+      transform: translateY(-7px);
+      transition: 1s ease-in-out;
+      box-shadow: 5px 5px #880808;
+  }
+</style>
+
+  <title>Home | Blood Bank</title>
+
+  <link rel="icon" href="https://res.cloudinary.com/dm4exe2e8/image/upload/v1651155188/icon_dhpwbe.png" type="image/x-icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="home.css">
+  <link type="text/css" rel="stylesheet" href="p1_auth/templates/css/materialize.min.css" media="screen,projection" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+     <div>
+        <nav>
+            <div class="nav-wrapper" id="head-cont">
+                <a href="{{url_for('home')}}" class="brand-logo" style="margin-top: -25px; padding-left: 40px;"><span id="head"
+                        style="color: #880808;">
+                        <h2 id="bl">Blood <span id="ba" style="color: #3c005a;">Bank</span></h2>
+                    </span></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down" style="padding-left: 5px;">
+                    <!-- <li style="padding-right: 20px;"><form method="POST" action="/a_admin">
+                      <input style="margin-top: 20px; margin-left:-20px;" id="button1" type="submit" value="Admin">
+                    </form>
+                    <li style="padding-right: 20px;"><form method="POST" action="/user">
+                      <input style="margin-top: 20px;" id="button1" type="submit" value="User">
+                    </form> -->
+                    <li><a href="{{url_for('usr_home')}}" style="text-decoration: none; margin-top: 10px; width: 100px; text-align: center;"
+                        id="hov">Search</a>
+                    <li><a href="{{url_for('reques')}}" style="text-decoration: none; margin-top: 10px; width: 100px; text-align: center;"
+                        id="hov">Request</a>
+                    <li><a href="{{url_for('login')}}" style="text-decoration: none; margin-top: 10px; width: 100px; text-align: center;"
+                        id="hov">User</a>
+                    <li><a href="{{url_for('a_admin')}}" style="text-decoration: none; margin-top: 10px; width: 100px; text-align: center;"
+                        id="hov">Admin</a>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <div id="strip">
+
+    </div>
+
+    <div id="vid-cont">
+      <video id="vid" autoplay loop muted>
+      <source src="https://res.cloudinary.com/dm4exe2e8/video/upload/v1651154677/Blood2_aj3xup.mp4" type="video/mp4">
+      <source src="https://res.cloudinary.com/dm4exe2e8/video/upload/v1651154677/Blood2_aj3xup.mp4" type="video/ogg">
+      Your browser does not support the video tag.
+      </video>
+    </div> 
+  </div>
+
+  <div id="head1">
+    <img src="https://res.cloudinary.com/dm4exe2e8/image/upload/v1651155135/abstract3_n3sfoy.png" style="float: left; width: 400px; height: 400px;" />
+     <div id="content1"><div style="font-size: 3vw; color: #880808; margin-top: -60px;">Introduction </div> <br>There’s no end to the benefits of donating blood for those who need it.
+     According to the <a href="https://www.icrc.org/en" style="color: #880808;">Red Cross</a>, one donation can save as many as three
+     lives, and someone in the India needs blood every two seconds. It
+     turns out that donating blood doesn’t just benefit recipients. There are
+     health benefits for donors, too, on top of the benefits that come from
+     helping others. According to <a href="https://www.who.int/" style="color: #880808;">WHO</a>, India suffers from an annual deficit of
+     two million blood units, as ony 1% of India population donates blood each year.</div>
+  </div>
+
+  <div id="head2">
+    <div id="step1" style="text-align: center; background-color: #fef1e1; background-attachment: fixed;">
+      <img src="https://res.cloudinary.com/dm4exe2e8/image/upload/v1651160541/S1_lif8qg.png" style="float: right; width: 400px; height: 400px;" />
+      <div style="font-size: 3vw; padding: 50px; color: #880808; font-family: 'Yanone Kaffeesatz'; font-weight: bold;">Registration</div>
+      <div style="font-size: 2vw; padding: 50px; padding-bottom: 150px; font-family: 'Yanone Kaffeesatz'; color: #3c005a; font-weight: bold;">
+        In order to use this website, you need to register first. Once you are registered, you should login to access all the
+        information available on this website.
+      </div>
+    </div>
+
+    <div id="step2" style="text-align: center; background-color: #c0d5d0; background-attachment: fixed;">
+      <img src="https://res.cloudinary.com/dm4exe2e8/image/upload/v1651160588/S2_zkmmwq.png" style="float: left; width: 400px; height: 400px; " />
+      <div style="font-size: 3vw; padding: 50px; color: #880808; font-family: 'Yanone Kaffeesatz'; font-weight: bold;">Search</div>
+      <div style="font-size: 2vw; padding: 50px; padding-bottom: 150px; font-family: 'Yanone Kaffeesatz'; color: #3c005a; font-weight: bold;">
+        With this website, you can search for blood banks near you and contact them via the provided contact information. Admins
+        will keep these details updated on a regular basis.
+      </div>
+    </div>
+
+    <div id="step3" style="text-align: center; background-color: #fdcdc3; background-attachment: fixed;">
+      <img src="https://res.cloudinary.com/dm4exe2e8/image/upload/v1651160614/S3_m8attb.png" style="float: right; width: 400px; height: 400px;" />
+      <div style="font-size: 3vw; padding: 50px; color: #880808; font-family: 'Yanone Kaffeesatz'; font-weight: bold;">Request</div>
+      <div style="font-size: 2vw; padding: 50px; padding-bottom: 150px; font-family: 'Yanone Kaffeesatz'; color: #3c005a; font-weight: bold;">
+        Furthermore, the website allows you to request a certain blood type, and upon reviewing the information you provide on
+        this site, our administrators will make sure that particular blood type is entered into our database as soon as
+        possible. The information is accessible through the search section.
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div style=" background-image: url('https://res.cloudinary.com/dm4exe2e8/image/upload/v1651160833/abstract7_bbjtbr.png'); height: 450px; background-repeat: no-repeat;"><br><br>
+      <div style="font-size: 3vw; text-align: center; color: #880808; font-family: 'Yanone Kaffeesatz'; font-weight: bold;">Support Us!</div> 
+      <div style="color: #3c005a; padding: 45px; font-size: 2vw; margin-top: -30px; font-family: 'Yanone Kaffeesatz'; font-weight: bold;">Donating blood is not the only way you can help us achieve
+        its mission of providing safe and adequate blood supplies for
+        the communities we serve. Financial gifts, regardless of their amount, help us
+        purchase cutting-edge medical equipment for blood collection and testing.</div><br><br>
+
+ <!-- <center>
+<form method="POST" action="/a_admin">
+<input id="button1" type="submit" value="Admin">
+<br>
+</form>
+<form method="POST" action="/user">
+<input id="button1" type="submit" value="User">
+<br><br>
+<br><br>
+</form>
+</center> -->
+
+      <div style="float: left; margin-left: 70px; color:#880808; border: 1px solid #3c005a; padding: 20px; text-align: center; margin-top: -60px; border-radius: 8px; width: 300px; font-family: 'Yanone Kaffeesatz'; font-weight: bold; font-size: 2vw; background-color: rgba(255,255,255, 0.5);">
+        <div>To request blood</div>
+        <br>
+      <form method="POST" action="/reques">
+      <input id="button1" type="submit" value="Request">
+
+<br><br>
+</form>
+      </div>
+      <div style="float: right; margin-right: 70px; color: #880808; border: 1px solid #3c005a; padding: 20px; text-align: center; margin-top: -60px; border-radius: 8px; width: 300px; font-family: 'Yanone Kaffeesatz'; font-weight: bold; font-size: 2vw; background-color: rgba(255,255,255, 0.5);">
+        <div>To financially support us </div>
+        <br><br>
+        <input id="button1" type="button" onclick="location.href= 'https://rzp.io/l/hXcUuNcBKt'"
+          value="Donate Funds">
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="p1_auth/templates/js/materialize.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <div style="height: 20px; background-color: #3c005a;"></div>
+
+  </body>
+</html>
